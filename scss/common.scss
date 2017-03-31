@@ -14,10 +14,35 @@ body{
     line-height: 2.4em;
 }
 
+input{
+    outline: none;
+    border:none;
+}
+
 /******   common   ******/
 .container{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.borb {
+  position: relative;
+}
+.borb:before {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleY(0.5);
 }
 
 /******   header   ******/

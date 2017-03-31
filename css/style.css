@@ -541,12 +541,67 @@ body {
   line-height: 2.4em;
 }
 
+input {
+  outline: none;
+  border: none;
+}
+
 /******   common   ******/
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.borb {
+  position: relative;
+}
+
+.borb:before {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleY(0.5);
 }
 
 /******   header   ******/
 /******   footer   ******/
-/******   pages   ******/
+/******   login   ******/
+.login-input-box {
+  display: flex;
+  margin-top: 10px;
+}
+.login-input-box .login-input {
+  flex: 1;
+}
+.login-input-box .login-input input {
+  width: 100%;
+  padding-right: 10px;
+}
+.login-input-box .login-input .icon {
+  padding-left: 26px;
+}
+.login-input-box .btn-code {
+  width: 142px;
+  padding-left: 10px;
+}
+.login-input-box .btn-code span {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #dc3c38;
+  border: 1px solid #dc3c38;
+  border-radius: 4px;
+  cursor: pointer;
+}

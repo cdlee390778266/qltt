@@ -1,4 +1,35 @@
 @charset "UTF-8";
 @import 'base';
 @import 'common';
-/******   pages   ******/
+
+$red : #dc3c38;
+/******   login   ******/
+.login-input-box{
+    display: flex;
+    margin-top: 10px;
+    .login-input{
+        flex : 1;
+        input{
+            width: 100%;
+            padding-right: 10px;
+        }
+        .icon{
+            padding-left: 26px;
+        }
+    }
+    .btn-code{
+        width: 142px;
+        padding-left: 10px;
+        span{
+            display: inline-block;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: $red;
+            border : 1px solid $red;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}
