@@ -1,17 +1,153 @@
 @charset "UTF-8";
-@import 'base';
-@import 'common';
 
 $red : #dc3c38;
+$gray : #a3a3a3;
+$yellow : #f7b703;
+
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+
+table{border-collapse:collapse;border-spacing:0;}
+
+fieldset,img {border:0;}
+
+address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+
+ol,ul {list-style:none;}
+
+capation,th{text-align:left;}
+
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+
+q:before, q:after{content:' '}
+
+abbr,acronym{border:0;}
+
+html{
+    font-size: 10px;
+}
+*{
+    box-sizing : border-box;
+}
+body{
+    font-style: '微软雅黑';
+    font-size:1.2rem;
+    line-height: 2.4em;
+    color: #a3a3a3;
+}
+
+input{
+    outline: none;
+    border:none;
+}
+
+a{
+    text-decoration: none;
+}
+/******   common   ******/
+.fred{
+    color: $red;
+}
+.mt15{
+    margin-top: 15px;
+}
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.borb {
+  position: relative;
+}
+.borb:before {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleY(0.5);
+}
+
+/******   header   ******/
+
+
+
+
+
+
+/******   footer   ******/
+.footer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    line-height: 12px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 0px 6px 2px #e5e5e5;
+    padding: 5px 0;
+    a{
+        display: block;
+        flex : 1;
+        color: $gray;
+        text-align: center;
+        .icon{
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            &.icon-search{
+                background: url(../images/icon.png) 0 -126px;
+            }
+            &.icon-care{
+                background: url(../images/icon.png) 3px -171px;
+            }
+            &.icon-pool{
+                background: url(../images/icon.png) 2px -222px;
+            }
+            &.icon-rmd{
+                background: url(../images/icon.png) 2px -271px;
+            }
+        }
+        &.active{
+            color: $yellow;
+            .icon{
+                &.icon-search{
+                    background: url(../images/icon.png) -58px -122px;
+                }
+                &.icon-care{
+                    background: url(../images/icon.png) 3px -171px;
+                }
+                &.icon-pool{
+                    background: url(../images/icon.png) 2px -222px;
+                }
+                &.icon-rmd{
+                    background: url(../images/icon.png) 2px -271px;
+                }
+            } 
+        }
+    }
+}
+
+
 /******   login   ******/
 .login-input-box{
     display: flex;
-    margin-top: 10px;
+    margin-top: 25px;
     .login-input{
         flex : 1;
         input{
             width: 100%;
             padding-right: 10px;
+            padding-bottom: 10px;
         }
         .icon{
             padding-left: 26px;
@@ -32,4 +168,22 @@ $red : #dc3c38;
             cursor: pointer;
         }
     }
+}
+
+.login-tip{
+    margin-top: 2em;
+    line-height: 2.2rem;
+    padding: 0 10px;
+}
+.login-submit{
+    display: block;
+    width: 100%;
+    height: 4rem;
+    line-heigrht: 4rem;
+    margin-top: 2rem;
+    background: $red;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    border-radius: 4px;
 }
