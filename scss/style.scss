@@ -33,6 +33,7 @@ body{
     font-size:1.2rem;
     line-height: 2.4em;
     color: #a3a3a3;
+    background: #fff;
 }
 
 input{
@@ -76,7 +77,65 @@ a{
 }
 
 /******   header   ******/
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 4.4rem;
+    width: 100%;
+    background: $red;
+    overflow: hidden;
+    -ms-touch-action: none;
+}
 
+#scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 380px;
+    height: 4.4rem;
+    line-height: 4.4rem;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+#scroller ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#scroller li {
+    width: 90px;
+    height: 4.4rem;
+    float: left;
+    line-height: 4.4rem;
+    background-color: $red;
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: all .4s;
+    &.active{
+        background: #c9312d;
+        transition: all .4s;
+    }
+}
 
 
 
@@ -85,7 +144,7 @@ a{
 /******   footer   ******/
 .footer{
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -95,6 +154,7 @@ a{
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0 0px 6px 2px #e5e5e5;
     padding: 5px 0;
+    background: #fff;
     a{
         display: block;
         flex : 1;
@@ -186,4 +246,44 @@ a{
     text-align: center;
     outline: none;
     border-radius: 4px;
+}
+
+
+/******   login   ******/
+.search{
+    position: absolute;
+    top: 4.4rem;
+    left: 0;
+    padding-bottom: 5.4rem;
+    .search-item{
+        margin-bottom: 10px;
+        .search-head{
+            color: $red;
+            margin-bottom: 4px;
+        }
+        .search-body{
+            line-height: 2.2rem;
+        }
+        .search-foot{
+            text-align: right;
+            margin-top: -5px;
+            &>span{
+                display: inline-block;
+                width: 62px;
+                height: 26px;
+                line-height : 26px;
+                color: #fff;
+                text-align: right;
+                padding-right: 10px;
+                border-radius: 4px;
+                background: url(../images/icon.png) 10px -37px $red;
+                transition: all .4s;
+                &.active{
+                    padding-right: 5px;
+                    background: url(../images/icon.png) 5px -77px #cecece;
+                    transition: all .4s;
+                }
+            }
+        }
+    }
 }

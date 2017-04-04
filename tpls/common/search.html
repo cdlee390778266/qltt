@@ -1,0 +1,9 @@
+﻿<div class="search container" >
+	<div class="search-item" ng-repeat="x in searchArr">
+		<div class="search-head" ng-bind="x.searchHead"></div>
+		<div class="search-body" ng-bind="x.searchBody"></div>
+		<div class="search-foot">
+			<span ng-bind="x.searchFoot.care" ng-click="change($index)" class="{{x.searchFoot.class}}" ></span>
+		</div>
+	</div>
+</div>
