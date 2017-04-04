@@ -54,7 +54,7 @@ app.controller('footer',function($scope){
     $scope.fRmd = '荐股池';
 });
 
-//页脚控制器
+//指标查询控制器
 app.controller('search',function($scope){
     $scope.searchArr = [
         {
@@ -118,4 +118,42 @@ app.controller('search',function($scope){
             $scope.searchArr[index].searchFoot.class = '';
         }
     }
+});
+
+//标签控制器
+app.controller('tag',function($scope){
+    $scope.tagArr = [
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '早晨之星' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+    ]
 });
