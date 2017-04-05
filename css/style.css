@@ -570,7 +570,6 @@ input {
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: scaleY(0.5);
 }
 
 /******   header   ******/
@@ -578,7 +577,7 @@ input {
 /******   login   ******/
 .login-input-box {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .login-input-box .login-input {
   flex: 1;
