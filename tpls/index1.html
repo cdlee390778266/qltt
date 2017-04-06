@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html >
+<html lang="zh-CN" ng-app="qlttApp">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/buttons/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/buttons/button.css" />
+  <link href="../css/style.css" rel="stylesheet">
+  <script src="../js/jquery-1.10.1.js"></script>
+
+  <title>手机验证</title>
+  </head>
+  <body>
+    <div class="login-bg"><img src="../images/login_bg.png" class="img-responsive" /></div>
+
+    <form action="" class="container login" ng-controller="login" >
+        <div class="login-input-box">
+          <div class="login-input borb">
+            <input type="text" class="icon icon-phone" maxlength="11" placeholder="{{phoneTip}}" />
+          </div>
+        </div>
+        <div class="login-input-box">
+          <div class="login-input borb">
+            <input type="text" class="icon icon-code mt15" placeholder="{{codeTip}}" maxlength="4" />
+          </div>
+          <div class="btn-code">
+            <span ng-bind="codeText"></span>
+          </div>
+        </div>
+        <div class="login-tip">
+            <p><span ng-bind="pText1"></span> <span class="fred" ng-bind="pText2"></span></p>
+            <p ng-bind="pText3"></p>
+        </div>
+        <input type="submit" value="{{submitText}}" class="login-submit" />
+    </form>
+
+    <div ng-controller="footer" ng-include="'common/footer.html'"></div>
+  
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/directives.js"></script>
+  </body>
+</html>

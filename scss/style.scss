@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 $red : #dc3c38;
-$gray : #a3a3a3;
+$gray : #cecece;
 $yellow : #f7b703;
+$bgSize : 250px 700px;
 
 body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
 
@@ -73,7 +74,7 @@ a{
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: scaleY(0.5);
+  // transform: scaleY(0.5);
 }
 
 /******   header   ******/
@@ -164,33 +165,36 @@ a{
             display: inline-block;
             width: 2.4rem;
             height: 2.4rem;
-            &.icon-search{
-                background: url(../images/icon.png) 0 -126px;
+            background-image:url('../images/icon.png') ;
+            background-size : $bgSize;
+            background-repeat:no-repeat;
+            &.icon-searchd{
+                background-position: -39px -39px;
             }
             &.icon-care{
-                background: url(../images/icon.png) 3px -171px;
+                background-position: -39px -76px;
             }
             &.icon-pool{
-                background: url(../images/icon.png) 2px -222px;
+                 background-position: -39px -111px;
             }
             &.icon-rmd{
-                background: url(../images/icon.png) 2px -271px;
+                background-position: -41px -145px;
             }
         }
         &.active{
             color: $yellow;
             .icon{
-                &.icon-search{
-                    background: url(../images/icon.png) -58px -122px;
+                &.icon-searchd{
+                    background-position: -75px -39px;
                 }
                 &.icon-care{
-                    background: url(../images/icon.png) 3px -171px;
+                    background-position: -75px -76px;
                 }
                 &.icon-pool{
-                    background: url(../images/icon.png) 2px -222px;
+                    background-position: -75px -111px;
                 }
                 &.icon-rmd{
-                    background: url(../images/icon.png) 2px -271px;
+                    background-position: -77px -145px;
                 }
             } 
         }
@@ -199,6 +203,12 @@ a{
 
 
 /******   login   ******/
+.login-bg img{
+    width : 100%;
+}
+.login{
+    padding-bottom: 7rem;
+}
 .login-input-box{
     display: flex;
     margin-top: 25px;
@@ -210,7 +220,23 @@ a{
             padding-bottom: 10px;
         }
         .icon{
+            position:relative;
             padding-left: 26px;
+            &.icon-phone{
+                padding-top: 5px;
+                background-image:url('../images/icon.png') ;
+                background-size : $bgSize;
+                background-repeat:no-repeat;
+                background-position: -145px -432px;
+            }
+            &.icon-code{
+                margin-top: 10px;
+                padding-top: 5px;
+                background-image:url('../images/icon.png') ;
+                background-size : $bgSize;
+                background-repeat:no-repeat;
+                background-position: -145px -467px;
+            }
         }
     }
     .btn-code{
@@ -257,10 +283,28 @@ a{
     right: 0;
     padding-bottom: 5.4rem;
     .search-item{
-        margin-bottom: 10px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        &:last-child{
+            border-bottom:none;
+        }
         .search-head{
             color: $red;
             margin-bottom: 4px;
+            i{
+                display:block;
+                width:16px;
+                height:16px;
+                background-image:url('../images/icon.png') ;
+                background-size : $bgSize;
+                background-repeat:no-repeat;
+                background-position: -151px -117px;
+                float : right;
+                margin-top: 6px;
+                margin-right: 10px;
+                cursor:pointer;
+            }
         }
         .search-body{
             line-height: 2.2rem;
@@ -277,15 +321,28 @@ a{
                 text-align: right;
                 padding-right: 10px;
                 border-radius: 4px;
-                background: url(../images/icon.png) 10px -37px $red;
+                background-image:url('../images/icon.png') ;
+                background-size : $bgSize;
+                background-repeat:no-repeat;
+                background-color: $red;
+                background-position: -145px -41px;
                 transition: all .4s;
                 &.active{
                     padding-right: 5px;
-                    background: url(../images/icon.png) 5px -77px #cecece;
+                    background-position: -145px -73px;
+                    background-color: $gray;
                     transition: all .4s;
                 }
             }
         }
+    }
+    .div-button{
+        height : 4rem;
+        line-height: 4rem;
+        text-align: center;
+        color:$yellow;
+        border : 1px solid $yellow;
+        border-radius: 4px;
     }
 }
 

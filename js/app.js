@@ -3,8 +3,13 @@
  */
 var app = angular.module('qlttApp',[]);
 
-var qlttCtr = app.controller('qlttCtr',function($scope){
-
+/**
+ * 这里的run方法只会在angular启动的时候运行一次。
+ * @param  {[type]} $rootScope
+ * @return {[type]}
+ */
+ app.run(function($rootScope) {
+    
 });
 
 //登录页控制器
@@ -34,6 +39,10 @@ app.controller('header',function($scope){
         'class' : ''
     },
     {
+        'text' : 'K线指标',
+        'class' : ''
+    },
+    {
         'text' : '数据指标',
         'class' : ''
     }];
@@ -44,6 +53,18 @@ app.controller('header',function($scope){
         }
         $scope.headerArr[index].class = 'active'; 
     }
+
+    $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+
+            $('#scroller').css('width',$scope.headerArr.length*90+20);
+            var headIscroll = new IScroll('#header', { 
+                eventPassthrough: true, 
+                scrollX: true, 
+                scrollY: false, 
+                preventDefault: false 
+            });
+    });
+
 });  
 
 //页脚控制器
@@ -52,6 +73,9 @@ app.controller('footer',function($scope){
     $scope.fCare = '我的关注';
     $scope.fPool = '选股池';
     $scope.fRmd = '荐股池';
+    $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+        
+    });
 });
 
 //指标查询控制器
@@ -106,7 +130,7 @@ app.controller('search',function($scope){
             }
         }  
     ];
-
+   
     $scope.change = function(index){
         
         $scope.searchArr[index].searchFoot.isActive = !$scope.searchArr[index].searchFoot.isActive;
@@ -118,6 +142,8 @@ app.controller('search',function($scope){
             $scope.searchArr[index].searchFoot.class = '';
         }
     }
+
+
 });
 
 //标签控制器
@@ -157,3 +183,72 @@ app.controller('tag',function($scope){
         },
     ]
 });
+
+//组合指标模板
+// function createTemplateCbt($parent,url){
+//     alert()
+//     var cbtArr = [
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         },
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         },
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         },
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         },
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         },
+//         {
+//             'searchHead' : '快速拉升',
+//             'searchBody' : '红三兵，股指评价的专用语。指连续阴线后连续拉出三根阳线（红色）。短期有上扬空间...',
+//             'searchFoot' : {
+//                 'care' : '关注',
+//                 'class' : ''
+//             }
+//         }  
+//     ];
+
+//     var html = '<div class="search container" id="search-cbt" >';
+//     for(var i in cbtArr){
+//        html  += '<div class="search-item">'
+//              +   '<div class="search-head">' + cbtArr[i].searchHead + '</div>'
+//              +      '<div class="search-body">' + cbtArr[i].searchBody + '</div>'
+//              +   '<div class="search-foot">'
+//              +      '<span>' + cbtArr[i].searchFoot.care + '</span>'
+//              +   '</div>'
+//              +  '</div> '
+//     }
+//     html += '</div>'
+//     $parent.append(html);
+
+// }
