@@ -181,7 +181,95 @@ app.controller('tag',function($scope){
             'text' : '红三兵' ,
             'class' : '' 
         },
-    ]
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        },
+        {
+            'text' : '红三兵' ,
+            'class' : '' 
+        }
+    ];
+
+    $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30
+        });
+           
+    });
+
+    $scope.checkTxt = '我的选择';
+    $scope.btnCare = '关注组合指标';
+    $scope.btnClc = '收藏组合指标';
+    $scope.checkArr = ['红三兵','红三兵','红三兵','红三兵','红三兵'];
+
+});
+
+//筛选控制器
+app.controller('screen',function($scope){
+    $scope.screenArr = [
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        },
+        {
+            'name' : '上海电影',
+            'nums' : 328370,
+            'date' : '03-01 12:35',
+            'type' : '潜力股'
+        }
+    ];
+
+    $scope.srceenTxtL = '根据您的指标组合共计筛选出';
+    $scope.srceenTxtNum = 120;
+    $scope.srceenTxtR = '支股票';
+    $scope.loadMore = '加载更多';
 });
 
 //组合指标模板

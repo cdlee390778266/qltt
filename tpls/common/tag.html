@@ -1,3 +1,31 @@
-﻿<div class="tag" >
-	<span ng-repeat="tag in tagArr" ng-bind="tag.text" ></span>
+﻿<!-- Swiper -->
+<div class="tag swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <span ng-repeat="tag in tagArr"  ng-bind="tag.text" ></span>
+        </div>
+        <div class="swiper-slide">
+            <span ng-repeat="tag in tagArr"  ng-bind="tag.text" ></span>
+        </div>
+        <div class="swiper-slide" >
+            <span ng-repeat="tag in tagArr"  ng-bind="tag.text" on-finish-render-filters></span>
+        </div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-mes">
+        <i class="red">5</i> / 20
+    </div>
+</div>
+
+<div class="tag-check tag">
+    <div class="check-txt" ng-bind="checkTxt"></div>
+    <div class="check-tags">
+        <span ng-repeat="tag in checkArr track by $index"  ><i></i><strong ng-bind="tag"></strong></span>
+    </div>
+    <div class="check-btn">
+        <a  href="javascript:void(0);"><strong ng-bind="btnCare"></strong></a>
+        <a  href="javascript:void(0);"><strong ng-bind="btnClc"></strong></a>
+    </div>
 </div>

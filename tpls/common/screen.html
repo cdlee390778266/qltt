@@ -1,0 +1,20 @@
+<div class="srceen">
+    <div class="srceen-txt">
+        <span ng-bind="srceenTxtL"></span><span ng-bind="srceenTxtNum" class="red"></span><span ng-bind="srceenTxtR"></span>
+    </div>
+    <div class="screen-main">
+        <div class="screen-item" ng-repeat="data in screenArr">
+            <div class="item-col-1">
+                <span ng-bind="data.name"></span>
+                <span class="red" ng-bind="data.nums"></span>
+            </div>
+            <div class="item-col-2" ng-bind="data.date"></div>
+            <div class="item-col-3" ng-bind="data.type"></div>
+            <div class="item-col-4">
+                <a href="javascript:void(0);"></a>
+                <a href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </div>
+    <div class="load-more"><i></i><span ng-bind="loadMore"></span></div>
+</div>
